@@ -9,12 +9,15 @@
   programs.zsh.enable = true;
 
   home-manager = {
-    users.reuben = { imports = [
-      ./home/git.nix
+    users.reuben = { 
+      imports = [
+        ./home/git.nix
+        ./home/neovim.nix
       ];
+      home.stateVersion = "22.11";
     };
     useGlobalPkgs = true;
-    useUserPkgs = true;
+    useUserPackages = true;
     backupFileExtension = "bak";
   };
 
