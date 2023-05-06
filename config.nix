@@ -13,6 +13,7 @@
       imports = [
         ./home/git.nix
         ./home/neovim.nix
+        ./home/fish.nix
       ];
       home.stateVersion = "22.11";
     };
