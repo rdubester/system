@@ -37,8 +37,14 @@
     ];
 
     casks = [
-      "spotify"
       "visual-studio-code"
+      "1password"
+      "obsidian"
+      "google-chrome"
+      "slack"
+      "linear-linear"
+      "discord"
+      "spotify"
     ];
   };
 }
