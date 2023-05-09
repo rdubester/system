@@ -1,29 +1,32 @@
 # File for configuring nix darwin
 # https://github.com/LnL7/nix-darwin/blob/master/modules/homebrew.nix
 
-
 { pkgs, ... }: {
 
   imports = [ ./modules/fish.nix ./modules/lindy.nix];
 
-  environment.systemPackages = with pkgs; [dig];
-
-  services.nix-daemon.enable = true;
-
   nix.extraOptions = ''
     experimental-features = nix-command flakes
   '';
-
-
+  
+  services.nix-daemon.enable = true;
   programs.zsh.enable = true;
+
+  environment.systemPackages = with pkgs; [
+      dig
+      htop
+      jq
+      tmux
+      tree
+    ];
 
   # home-manager options: https://nix-community.github.io/home-manager/options.html
   home-manager = {
     users.reuben = { 
       imports = [
+        ./home/fish.nix
         ./home/git.nix
         ./home/neovim.nix
-        ./home/fish.nix
         ./home/nvm.nix
       ];
       home.stateVersion = "22.11";
@@ -36,15 +39,13 @@
   homebrew = {
 
     enable = true;
-
     global.brewfile = true;
-
     global.autoUpdate = false;
 
     taps = map ( s: "homebrew/${s}" ) [
-      "core"
-      "cask"
       "bundle"
+      "cask"
+      "core"
     ];
 
     casks = [
@@ -61,6 +62,5 @@
     ];
 
   };
-
 
 }
