@@ -1,3 +1,6 @@
+# https://nix-community.github.io/home-manager/options.html
+# https://github.com/nix-community/home-manager/blob/master/modules/programs/fish.nix
+
 { lib, pkgs, ... }: {
 
     programs.fish = {
