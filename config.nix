@@ -3,7 +3,7 @@
 
 { pkgs, ... }: {
 
-  imports = [ ./modules/fish.nix ./modules/lindy.nix];
+  imports = [ ./modules/pyenv.nix ./modules/fish.nix ./modules/lindy.nix];
 
   nix.extraOptions = ''
     experimental-features = nix-command flakes
@@ -11,7 +11,7 @@
   
   services.nix-daemon.enable = true;
   programs.zsh.enable = true;
-
+  
   environment.systemPackages = with pkgs; [
       dig
       htop
@@ -40,7 +40,7 @@
 
     enable = true;
     global.brewfile = true;
-    global.autoUpdate = false;
+    global.autoUpdate = true;
 
     taps = map ( s: "homebrew/${s}" ) [
       "bundle"
