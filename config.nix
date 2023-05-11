@@ -1,4 +1,5 @@
 # File for configuring nix darwin
+# https://nix-community.github.io/home-manager/options.html
 # https://github.com/LnL7/nix-darwin/blob/master/modules/homebrew.nix
 
 { pkgs, ... }: {
@@ -18,12 +19,16 @@
       jq
       tmux
       tree
+      exa
     ];
 
   # home-manager options: https://nix-community.github.io/home-manager/options.html
   home-manager = {
     users.reuben = { 
+      # settings loaded here can be found in
+      # darwinConfigurations.Station.config.home-manager.users.reuben.programs
       imports = [
+        ./home/alacritty.nix
         ./home/fish.nix
         ./home/git.nix
         ./home/neovim.nix
@@ -50,6 +55,7 @@
 
     casks = [
       "1password"
+      "alacritty"
       "discord"
       "docker"
       "google-chrome"
