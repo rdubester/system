@@ -7,7 +7,7 @@
         enable = true;
 
         shellAbbrs = {
-            system = "code ~/system";
+            system = "code-insiders ~/system";
             hgrep = "history | grep";
             htail = "history | tail";
             
@@ -37,6 +37,7 @@
         # path
         fish_add_path /opt/homebrew/opt/openssl@3/bin
         fish_add_path /Users/reuben/.nvm/versions/node/v18.14.0/bin
+        fish_add_path /opt/homebrew/opt/openjdk/bin
         fish_add_path $PYENV_ROOT/bin
 
         # PYENV

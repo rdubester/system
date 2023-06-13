@@ -53,12 +53,22 @@
       "core"
     ];
 
+    brews = [
+      "httpie"
+      "gradle"
+      "openjdk@11"
+    ];
+
     casks = [
       "1password"
       "alacritty"
+      "background-music"
       "discord"
       "docker"
       "google-chrome"
+      "google-drive"
+      "loom"
+      "minecraft"
       "obsidian"
       "slack"
       "spotify"
