@@ -17,6 +17,11 @@
             ll = "exa -l";
             lL = "exa -algiSH --git";
             lt = "exa -lT";
+            gbr = "git branch";
+            gup = "git fetch origin; git rebase origin/main";
+            gcan = "git commit -a --amend --no-edit";
+            gcopy = "git rev-parse HEAD | tr -d '\n' | pbcopy; echo 'Copied rev'";
+
         };
 
         functions = {
