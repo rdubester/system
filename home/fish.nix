@@ -17,6 +17,9 @@
             ll = "exa -l";
             lL = "exa -algiSH --git";
             lt = "exa -lT";
+
+            worker-start = "pkill -9 -f 'classes/master.js'; pkill -9 -f 'worker/index.ts'; env WORKER_CONCURRENCY=1 pnpm worker:watch";
+
             gbr = "git branch";
             gup = "git fetch origin; git rebase origin/main";
             gcan = "git commit -a --amend --no-edit";
@@ -41,9 +44,12 @@
         
         # path
         fish_add_path /opt/homebrew/opt/openssl@3/bin
-        fish_add_path /Users/reuben/.nvm/versions/node/v18.14.0/bin
+        fish_add_path /Users/reuben/.nvm/versions/node/v20.11.0/bin
         fish_add_path /opt/homebrew/opt/openjdk/bin
         fish_add_path $PYENV_ROOT/bin
+        fish_add_path /Users/reuben/google-cloud-sdk/bin
+        fish_add_path /Applications/Docker.app/Contents/Resources/bin
+        fish_add_path /Users/reuben/.local/bin
 
         # PYENV
         set -Ux PYENV_ROOT $HOME/.pyenv
