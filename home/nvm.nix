@@ -16,6 +16,10 @@
         }
     ];
 
+    programs.neovim.plugins = [
+        pkgs.vimPlugins.vissort-vim
+    ];
+
     programs.fish.functions = {
         
         nvm = ''
