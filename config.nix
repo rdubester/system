@@ -4,7 +4,7 @@
 
 { pkgs, ... }: {
 
-  imports = [ ./modules/pyenv.nix ./modules/fish.nix ./modules/lindy.nix];
+  imports = [ ./modules/pyenv.nix ./modules/fish.nix ./modules/lindy.nix ./modules/stablediffusion.nix];
 
   nix.extraOptions = ''
     experimental-features = nix-command flakes
@@ -57,19 +57,29 @@
       "httpie"
       "gradle"
       "openjdk@11"
+      "helm"
+      "telnet"
+      "elan-init"
+      "ffmpeg"
+      "graphviz"
+      "pipx"
+      "podman"
+      "mongodb-database-tools"
+      "mongodb-atlas-cli"
     ];
 
     casks = [
       "1password"
+      "ngrok"
       "alacritty"
       "background-music"
       "discord"
-      "docker"
       "google-chrome"
       "google-drive"
       "loom"
       "minecraft"
       "obsidian"
+      "podman-desktop"
       "slack"
       "spotify"
       "steam"
