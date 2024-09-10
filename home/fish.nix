@@ -2,6 +2,8 @@
 
 { lib, pkgs, ... }: {
 
+    home.file."lindy.fish".source = ./fish_functions/lindy.fish;
+
     programs.fish = {
 
         enable = true;
@@ -36,6 +38,10 @@
                 and command uptime
                 set_color normal
                 '';
+            };
+
+            lindy = {
+                body = builtins.readFile ./fish_functions/lindy.fish;
             };
         };
 
